@@ -15,14 +15,18 @@
 
 			var scene = new THREE.Scene();
 
-			var cube = new THREE.Mesh(new THREE.CubeGeometry(1,1,1), new THREE.MeshNormalMaterial());
+			var shape = new THREE.CubeGeometry(1,1,1);
+
+			var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+
+			var cube = new THREE.Mesh(shape, material);
 
 			scene.add(cube);
 
 			var render = function () {
 			
 				requestAnimationFrame(render);
-				cube.rotation.x += 0.1;
+				cube.rotation.x += 0.2;
 				cube.rotation.y += 0.1;
 
 				renderer.render(scene, camera);
